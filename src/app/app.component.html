@@ -1,0 +1,15 @@
+<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
+<div style="text-align:center">
+  <h4> Welcome to {{ title }}! </h4>
+</div>
+<mat-drawer-container class="example-container" [hasBackdrop]="false">
+  <mat-drawer  #drawer mode="push" style="background-color: blueviolet; width: 15%;" opened="true">
+    <button mat-raised-button color="accent" routerLink="create" routerLinkActive="active">Create</button>
+
+    <button mat-raised-button color="warn" routerLink="index" routerLinkActive="active">Index</button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button mat-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
